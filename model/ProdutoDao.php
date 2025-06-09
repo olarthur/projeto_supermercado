@@ -57,11 +57,19 @@ class ProdutoDao {
 
         $pdo = Conexao::obterConexao();
 
-        $stmt = $pdo -> prepare("UPDATE Produto SET produto=:produto,qtd_estoque=:qtd_estoque,preco_unitario=:preco_unitario,categoria=:categoria WHERE codigo=:codigo");
-        $stmt -> bindParam(':produto', $objProduto -> getProduto());
-        $stmt -> bindParam(':qtd_estoque', $objProduto -> getQtdEstoque());
-        $stmt -> bindParam(':preco_unitario', $objProduto -> getPrecoUnitario());
-        $stmt -> bindParam(':categoria', $objProduto -> getCategoria());
+        $stmt = $pdo -> prepare("UPDATE Produto SET produto = :produto, qtd_estoque = :qtd_estoque, preco_unitario = :preco_unitario, categoria = :categoria WHERE codigo = :codigo");
+
+        $codigo = $objProduto -> getCodigo(); 
+        $produto = $objProduto -> getProduto();
+        $qtdEstoque = $objProduto -> getQtdEstoque();
+        $precoUnitario = $objProduto -> getPrecoUnitario();
+        $categoria = $objProduto -> getCategoria();
+
+        $stmt -> bindParam(':codigo', $codigo);
+        $stmt -> bindParam(':produto', $produto);
+        $stmt -> bindParam(':qtd_estoque', $qtdEstoque);
+        $stmt -> bindParam(':preco_unitario', $precoUnitario);
+        $stmt -> bindParam(':categoria', $categoria);
 
         $stmt -> execute();
     }

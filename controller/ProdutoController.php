@@ -24,10 +24,10 @@ class ProdutoController {
     public function cadastrar() {
 
         $codigo = null;
-        $produto = $_POST['txtProduto'];
-        $qtdEstoque = $_POST['numQtdEstoque'];
-        $precoUnitario = $_POST['numPrecoUnitario'];
-        $categoria = $_POST['txtCategoria'];
+        $produto = $_POST['txtproduto'];
+        $qtdEstoque = $_POST['numqtdestoque'];
+        $precoUnitario = $_POST['numprecounitario'];
+        $categoria = $_POST['txtcategoria'];
 
         $produtoModel = new Produto($codigo, $produto, $qtdEstoque, $precoUnitario, $categoria);
 
@@ -73,10 +73,10 @@ class ProdutoController {
     public function alterar() {
 
         $codigo = $_POST['txtcodigo'];
-        $produto = $_POST['txtProduto'];
-        $qtdEstoque = $_POST['numQtdEstoque'];
-        $precoUnitario = $_POST['numPrecoUnitario'];
-        $categoria = $_POST['txtCategoria'];
+        $produto = $_POST['txtproduto'];
+        $qtdEstoque = $_POST['numqtdestoque'];
+        $precoUnitario = $_POST['numprecounitario'];
+        $categoria = $_POST['txtcategoria'];
 
         $produtoModel = new Produto($codigo, $produto, $qtdEstoque, $precoUnitario, $categoria);
 
