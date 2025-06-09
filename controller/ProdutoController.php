@@ -52,7 +52,6 @@ class ProdutoController {
             header("Location: index.php");
             exit();
         }
-
     }
 
     public function mostrarPaginaAlterar(){
