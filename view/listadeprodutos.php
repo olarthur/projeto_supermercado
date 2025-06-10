@@ -4,6 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Produtos</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: white;
+        }
+
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        table th {
+            background-color: #d32f2f; 
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        a button, table a {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 4px 2px;
+            text-decoration: none;
+            color: white;
+            background-color: #4caf50;
+            border-radius: 4px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        a button:hover, table a:hover {
+            background-color: #388e3c;
+        }
+
+        table a {
+            padding: 6px 10px;
+        }
+
+        table a[href*="paginaalterar"] {
+            background-color: #1976d2;
+        }
+
+        table a[href*="paginaalterar"]:hover {
+            background-color: #1565c0;
+        }
+
+        table a[href*="excluir"] {
+            background-color: #d32f2f;
+        }
+
+        table a[href*="excluir"]:hover {
+            background-color: #c62828;
+        }
+    </style>
 </head>
 <body>
 
@@ -11,12 +78,12 @@
 
     <a href="index.php?acao=paginacadastrar"><button>Cadastrar Produto</button></a><br><br>
 
-    <table border="1" style="width: 70%;text-align: center;">
-        <tr style="color:white;background-color: firebrick;">
-            <th>Código</th>
-            <th>Produto</th>
-            <th>QTD-Estoque</th>
-            <th>Preço</th>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Quantidade em Estoque</th>
+            <th>Preço Unitário</th>
             <th>Categoria</th>
             <th colspan="2">Ação</th>
         </tr>

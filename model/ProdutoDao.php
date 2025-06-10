@@ -15,23 +15,19 @@ class ProdutoDao {
 
     public function cadastrar($objProduto) {
 
-        //CONEXÃO COM O BANCO DE DADOS
         $pdo = Conexao::obterConexao();
 
-        //PREPARA A INSTRUÇÃO SQL
         $stmt = $pdo -> prepare("INSERT INTO Produto(produto, qtd_estoque, preco_unitario, categoria) VALUES(:produto, :qtd_estoque, :preco_unitario, :categoria)");
         $stmt -> bindParam(':produto', $objProduto -> getProduto());
         $stmt -> bindParam(':qtd_estoque', $objProduto -> getQtdEstoque());
         $stmt -> bindParam(':preco_unitario', $objProduto -> getPrecoUnitario());
         $stmt -> bindParam(':categoria', $objProduto -> getCategoria());
 
-        //EXECUTA A INSTRUÇÃO NO BANCO DE DADOS
         $stmt -> execute();
     }
 
     public function excluir($objProduto) {
 
-        //CONEXÃO COM O BANCO DE DADOS
         $pdo = Conexao::obterConexao();
     
         $stmt = $pdo -> prepare("DELETE FROM Produto WHERE codigo = :codigo");
